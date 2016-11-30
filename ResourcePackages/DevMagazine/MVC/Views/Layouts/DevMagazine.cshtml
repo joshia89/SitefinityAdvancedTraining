@@ -1,0 +1,166 @@
+﻿@using System.Web.Mvc;
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers;
+@using Telerik.Sitefinity.Modules.Pages;
+@using Telerik.Sitefinity.UI.MVC;
+@using Telerik.Sitefinity.Services;
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Home</title>    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @Html.Section("head")
+    @Html.StyleSheet(Url.Content("~/ResourcePackages/Devmagazine/assets/dist/css/sitefinity.bootstrap.min.css"), "head")
+    @Html.StyleSheet(Url.Content("~/ResourcePackages/Devmagazine/assets/dist/css/styles.min.css"), "head")
+</head>
+<body>    
+    <div class="navbar navbar-default js-nav-fixed">
+        <div class="container-fluid">
+            <div class="pull-right Search">
+                <label class="glyphicon glyphicon-search"></label>
+                <input type="search" class="js-search-field ui-autocomplete-input" value="" autocomplete="off">
+                <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
+            </div>
+            <nav role="navigation">
+                <div class="container-fluid">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="Home.html">DevMagazine</a>
+                    </div>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                        <ul class="nav navbar-nav">
+                            @Html.SfPlaceHolder("Navigation")
+                            <li><a href="Topic.html"><small><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span></small> .NET</a></li>
+                            <li><a href="Topic.html"><small><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span></small> Web</a></li>
+                            <li><a href="Topic.html"><small><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span></small> Testing</a></li>
+                            <li><a href="Topic.html"><small><span class="glyphicon glyphicon-star"></span></small> Mobile</a></li>
+                        </ul>
+                    </div>
+                    <!-- /.navbar-collapse -->
+                </div>
+                <!-- /.container-fluid -->
+            </nav>
+        </div>
+    </div>
+    <div class="Main-content section">
+        @Html.SfPlaceHolder("Contentplaceholder")        
+        <section class="section">
+            <div class="container">                           
+                @*<div class="row">
+                    <div class="col-md-9">
+                        <div class="overlay-wrapper">
+                            <img src="ResourcePackages/DevMagazine/assets/dist/images/laptopimage.png" />
+                            <div class="text-container">
+                                <h1>Welcome to the Dev Magazine site</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <h6 style="color:#808080">Upcoming Webinars</h6>
+                        <h5><a href="Article.html">5 Strategies for Building Mobile Apps with Telerik</a></h5>
+                        <div class="media Author--small">
+                            <a class="pull-left" href="Author.html">
+                                <img class="media-object img-circle" src="ResourcePackages/DevMagazine/assets/dist/images/authors/derik.jpg" alt="derik-small" height="40" width="40">
+                            </a>
+                            <div class="media-body">
+                                <h6 class="media-heading"><a href="Author.html">Derik Whittaker</a></h6>
+                                <span class="date-created">on July 26, 2016, 10:00-11:00</span>
+                            </div>
+                        </div>
+                        <br />
+                        <h5><a href="Article.html">How to "Angularize" your legacy applications</a></h5>
+                        <div class="media Author--small">
+                            <a class="pull-left" href="Author.html">
+                                <img class="media-object img-circle" src="ResourcePackages/DevMagazine/assets/dist/images/authors/dan.jpg" alt="derik-small" height="40" width="40">
+                            </a>
+                            <div class="media-body">
+                                <h6 class="media-heading"><a href="Author.html">Dan Wahlin</a></h6>
+                                <span class="date-created">on September 28, 2016, 15:00-16:00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>*@
+            </div>
+        </section>        
+        <section class="section">
+            <div class="container">                
+                @*<div class="row">
+                    <div class="col-md-2">
+                        <div class="text-center">
+                            <a href="Author.html">
+                                <img class="img-circle" src="ResourcePackages/DevMagazine/assets/dist/images/authors/rey-bango.jpg" height="128" width="128" alt="Rey Bango" />
+                            </a>
+                            <h3><a href="Author.html">Rey Bango</a></h3>
+                            <p>Windows Technical Evangelist at Microsoft</p>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="text-center">
+                            <a href="Author.html">
+                                <img class="img-circle" src="ResourcePackages/DevMagazine/assets/dist/images/authors/michele.jpg" height="128" width="128" alt="Michele Bustamante" />
+                            </a>
+                            <h3><a href="Author.html">Michele Bustamante</a></h3>
+                            <p>Share Managing Partner at Solliance</p>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="text-center">
+                            <a href="Author.html">
+                                <img class="img-circle" src="ResourcePackages/DevMagazine/assets/dist/images/authors/dan.jpg" height="128" width="128" alt="Dan Wahlin" />
+                            </a>
+                            <h3><a href="Author.html">Dan Wahlin</a></h3>
+                            <p>Share Founder of The Wahlin Group</p>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="text-center">
+                            <a href="Author.html">
+                                <img class="img-circle" src="ResourcePackages/DevMagazine/assets/dist/images/authors/kathleen.jpg" height="128" width="128" alt="Kathleen Dollard" />
+                            </a>
+                            <h3><a href="Author.html">Kathleen Dollard</a></h3>
+                            <p>.NET Coach for Crystal MEF Lab</p>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="text-center">
+                            <a href="Author.html">
+                                <img class="img-circle" src="ResourcePackages/DevMagazine/assets/dist/images/authors/derik.jpg" height="128" width="128" alt="Derik Whittaker" />
+                            </a>
+                            <h3><a href="Author.html">Derik Whittaker</a></h3>
+                            <p>Share Windows Platform Lead at Orgspan</p>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="text-center">
+                            <a href="Author.html">
+                                <img class="img-circle" src="ResourcePackages/DevMagazine/assets/dist/images/authors/todd.jpg" height="128" width="128" alt="Todd Anglin" />
+                            </a>
+                            <h3><a href="Author.html">Todd Anglin</a></h3>
+                            <p>VP of HTML5 Web &amp; Mobile Tools for Telerik</p>
+                        </div>
+                    </div>
+                </div>*@
+
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        @Html.SfPlaceHolder("footer")        
+    </footer>
+    @Html.Script(ScriptRef.MicrosoftAjax, "head")
+    @Html.Script(ScriptRef.MicrosoftAjaxCore, "head")
+    @Html.Script(ScriptRef.JQuery, "head")
+    @Html.Script(Url.WidgetContent("~/ResourcePackages/DevMagazine/assets/dist/js/bootstrap.min.js"), "head")
+    @*@Html.Script(Url.WidgetContent("~/ResourcePackages/DevMagazine/assets/dist/js/all.min.js"), "head")*@
+</body>
+</html>

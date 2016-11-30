@@ -1,0 +1,42 @@
+@model Telerik.Sitefinity.Frontend.DynamicContent.Mvc.Models.DynamicContentListViewModel
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers;
+@using Telerik.Sitefinity.Modules.Pages;
+
+@Html.Script(ScriptRef.JQuery)
+
+<link rel="stylesheet" href='@Url.WidgetContent("//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css")' type="text/css" />
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+<div class="@Model.CssClass">
+
+    @foreach (var item in Model.Items)
+    {
+        <div class="col-md-2">
+            <div class="text-center">
+                @if (ViewBag.OpenInSamePage)
+                {
+                    <a @Html.InlineEditingFieldAttributes("Name", "ShortText") href="@(ViewBag.CurrentPageUrl + item.Fields.ItemDefaultUrl)">
+                        <img class="img-circle" src="@item.Fields.Avatar.Fields.MediaUrl" alt="@item.Fields.Name" />
+                    </a>
+                        <h3>
+                            <a @Html.InlineEditingFieldAttributes("Name", "ShortText") href="@(ViewBag.CurrentPageUrl + item.Fields.ItemDefaultUrl)">
+                                @item.Fields.Name
+                            </a>
+                        </h3>
+                }
+                else
+                {
+                    <a @Html.InlineEditingFieldAttributes("Name", "ShortText") href="@(ViewBag.CurrentPageUrl + item.Fields.ItemDefaultUrl)">
+                        <img class="img-circle" src="@item.Fields.Avatar.Fields.MediaUrl" alt="@item.Fields.Name" />
+                    </a>
+                        <h3>
+                            <a @Html.InlineEditingFieldAttributes("Name", "ShortText") href="@HyperLinkHelpers.GetDetailPageUrl(item.DataItem, ViewBag.DetailsPageId)">
+                                @item.Fields.Name
+                            </a>
+                        </h3>
+                }
+                <p>@Html.Raw(item.Fields.Bio)</p>
+            </div>
+        </div>
+    }
+</div>
