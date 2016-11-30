@@ -12,6 +12,7 @@ using Telerik.Sitefinity.Frontend.Mvc.Infrastructure.Controllers.Attributes;
 using SitefinityWebApp.App_Data.Sitefinity.Resources;
 using System.Collections.Generic;
 using Telerik.Sitefinity.Modules.Events;
+using Telerik.Sitefinity.Data.ContentLinks;
 
 namespace SitefinityWebApp.Mvc.Controllers
 {
@@ -70,16 +71,35 @@ namespace SitefinityWebApp.Mvc.Controllers
             DynamicModuleManager dynamicModuleManager = DynamicModuleManager.GetManager(providerName, transactionName);
             Type webinarType = TypeResolutionService.ResolveType("Telerik.Sitefinity.DynamicTypes.Model.Webinars.Webinar");
 
-            List<WebinarModel> myCollection = dynamicModuleManager.GetDataItems(webinarType).Select(x => new WebinarModel()
-            {
-                Title = x.GetValue("Title").ToString(),
-                description = x.GetValue("Description").ToString(),
-                StartTime = Convert.ToDateTime(x.GetValue("StartTime")),
-                EndTime = Convert.ToDateTime(x.GetValue("EndTime")),
-                EventId = EventsManager.GetManager().GetEvents().Where(e => e.Title == x.GetValue("Title").ToString()).Select(y => y.Id).ToString()                
-            }).ToList();            
+            // trying out the join
+            var contentLinksManager = ContentLinksManager.GetManager();
+            var links = contentLinksManager.GetContentLinks()
+            .Where(cl => cl.ParentItemType == typeof(WebinarModel).FullName &&
+            cl.ComponentPropertyName == "RelatedEvent");            var webinars = dynamicModuleManager.GetDataItems(webinarType);
+            var eventsManager = EventsManager.GetManager();
+            var events = eventsManager.GetEvents();
+            var relatedData = events
+            .Join(links, (bp) => bp.OriginalContentId, (cl) => cl.ChildItemId, (bp, cl) => new {
+                bp,
+                cl
+            })
+            .Join(webinars, (bpcl) => bpcl.cl.ParentItemId, (n) => n.OriginalContentId, (bpcl, n) => new {
+                n,
+                bpcl.bp
+            }).Select(x => new WebinarModel() { Title = x.n.GetString("Title"), description = x.n.GetString("Description"), EventId = x.bp.Id.ToString() }).ToList();
             
-            return View("Default", myCollection);
+
+            //passing back the collection (before performance optimizations)
+            //List<WebinarModel> myCollection = dynamicModuleManager.GetDataItems(webinarType).Select(x => new WebinarModel()
+            //{
+            //    Title = x.GetValue("Title").ToString(),
+            //    description = x.GetValue("Description").ToString(),
+            //    StartTime = Convert.ToDateTime(x.GetValue("StartTime")),
+            //    EndTime = Convert.ToDateTime(x.GetValue("EndTime")),
+            //    EventId = EventsManager.GetManager().GetEvents().Where(e => e.Title == x.GetValue("Title").ToString()).Select(y => y.Id).ToString()                
+            //}).ToList();            
+
+            return View("Default", relatedData);
         }
         
                   
