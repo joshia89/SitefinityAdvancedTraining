@@ -1,0 +1,14 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/SitefinityWebApp/bin
+/SitefinityWebApp/obj
+/SitefinityWebApp.v12.suo
+/SitefinityWebApp/App_Data/Sitefinity/Logs
+/SitefinityWebApp/App_Data/Sitefinity/Sitefinity.lic
+/SitefinityWebApp/App_Data/appStatusReport.html
+/SitefinityWebApp/packages
+/packages
+*.suo
+/.vs/config/applicationhost.config

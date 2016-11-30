@@ -1,10 +1,23 @@
-@model SitefinityWebApp.Mvc.Models.WebinarModel
+@model SitefinityWebApp.Mvc.Models.WebinarModelList
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers
+@using Telerik.Sitefinity.Modules.Events;
+
+@if (Model.WebinarModel.Count >= 1)
+{
+    foreach (var item in Model.WebinarModel)
+    {
+        //var eventManager = EventsManager.GetManager().GetEvents(). 
+        @Html.Raw(item.Title)
+        @Html.Raw(item.description)
+        @Html.Raw(item.StartTime)
+        @Html.Raw(item.EndTime)
+        @Html.Raw(item.EventId)
+        }
+    }
 
 <h1>
-    @Html.Raw(Model.Title)
+    @Html.Resource("StaticMessage")
 </h1>
 <p>
-    @Html.Raw(Model.description)
-    @Html.Raw(Model.StartTime)
-    @Html.Raw(Model.EndTime)
+    
 </p>

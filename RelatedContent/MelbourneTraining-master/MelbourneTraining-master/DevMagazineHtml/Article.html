@@ -1,0 +1,212 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>Article</title>
+	<link rel="stylesheet" href="assets/dist/css/styles.min.css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="navbar navbar-default js-nav-fixed">
+        <div class="container-fluid">
+
+            <nav role="navigation">
+                <div class="container-fluid">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="Home.html">DevMagazine</a>
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+
+                        <ul class="nav navbar-nav">
+                            <li><a href="Topic.html">.NET&nbsp<small><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span></small></a></li>
+                            <li><a href="Topic.html">Web&nbsp<small><span class="glyphicon glyphicon-star"></span></small></a></li>
+                            <li><a href="Topic.html">Testing&nbsp<small><span class="glyphicon glyphicon-star"></span></small></a></li>
+                            <li><a href="Topic.html">Mobile&nbsp<small><span class="glyphicon glyphicon-star"></span></small></a></li>
+
+                        </ul>
+
+                    </div>
+                    <!-- /.navbar-collapse -->
+
+                </div>
+                <!-- /.container-fluid -->
+            </nav>
+        </div>
+
+    </div>
+	<div class="Main-content">
+
+		<section class="section section--border">
+
+			<div class="container">
+
+				<div class="row">
+					<div class="text-center">
+						<div class="col-md-8 col-md-offset-2">
+							<h4><a href="Topic.html">Web</a></h4>
+							<h1>5 Strategies for Building Mobile Apps with Telerik</h1>
+							<p>
+								by <a href="Author.html">TJ VanToll</a> on September 03, 2014
+								<span class="text-muted">|</span>
+								<a href="Issue.html">Selecting a CMS That Supports Your Business</a>
+							</p>
+							<div>
+								<ul class="list-inline sf-social-share">
+									<li>
+										<a href="#"><span class="sf-icon-facebook"></span></a>
+									</li>
+									<li>
+										<a href="#"><span class="sf-icon-twitter"></span></a>
+									</li>
+									<li>
+										<a href="#"><span class="sf-icon-google"></span></a>
+									</li>
+									<li>
+										<a href="#"><span class="sf-icon-linkedin"></span></a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-8 col-md-offset-2">
+						<hr />
+						<div>
+							<p>Traveling down the mobile development road can be&nbsp;<a href="http://blogs.telerik.com/telerikmarketing/posts/14-05-21/everything-you-wanted-to-know-about-native-hybrid-and-web-apps-but-were-afraid-to-ask">challenging, given the diversity of mobile projects and the diversity of strategies available to build out mobile solutions</a>.
+								Also, understanding all of the offerings that can help a developer execute a strategy can be challenging. In this article I am going to silo Telerik’s mobile development offerings into logical and comprehensible strategies, so that a developer
+								can easily travel Telerik’s mobile development road and stop off where a project’s requirements are met.</p>
+							<div>
+								<p style="text-align: right;">Disclaimer: Most of these strategies assume that you want to use web technologies to build an application UI to reach as many users as possible either using the web platform (i.e. browser) or outputting several hybrid native applications (i.e.
+									WebView) for multiple mobile platforms from a single code base of HTML, CSS, and JavaScript.</p>
+							</div>
+							<h2>Strategy 1: Use Kendo UI Web Widgets With Adaptive Mobile Rendering Options &amp; Kendo UI Data Visualization Widgets</h2>
+							<p><img src="assets/dist/images/screenshot-2014-08-21-16-04-47-152x300-2.png" displaymode="Original" alt="Screenshot-2014-08-21-16.04.47-152x300[2]" title="Screenshot-2014-08-21-16.04.47-152x300[2]" style="float: right;"></span>Both
+								the&nbsp;<a href="http://demos.telerik.com/kendo-ui/grid/adaptive">Grid</a>&nbsp;and the&nbsp;<a href="http://demos.telerik.com/kendo-ui/scheduler/adaptive">Scheduler</a>&nbsp;professional widgets offer a mobile setting that when set to true will
+								adjust the widgets’ behavior and UI to adapt to phones and tablets (aka Adaptive Rendering). In addition to these two widgets containing specific phone/tablet rendering options the Web and Data Visualization widgets are supported on touch devices.
+								This makes it possible to build a mobile/desktop web UI with the Kendo UI Web and Data Visualization widgets without actually using a Kendo UI Mobile widget.</p>
+							<p>To get started with Kendo UI Web and Data visualization widgets, check out the&nbsp;<a href="http://demos.telerik.com/kendo-ui/">demos</a>&nbsp;or read the&nbsp;<a href="http://docs.telerik.com/kendo-ui/">Getting Started</a>&nbsp;documents.</p>
+							<h4><strong>Notes:</strong></h4>
+							<ul>
+								<li>The<a href="http://demos.telerik.com/kendo-ui/grid/adaptive">Grid</a>,<a href="http://demos.telerik.com/kendo-ui/scheduler/adaptive">Scheduler</a>, and Data Visualization widgets are part of the Professional Kendo UI Widgets sold commercially.
+									A fully functional<a href="http://www.telerik.com/download/kendo-ui">30 day trial of Kendo UI Professional is available</a>.</li>
+								<li>Web and Data Visualization Widgets are supported on Firefox ESR, IE 7+, Safari 5+, Chrome Latest, Opera 15+, iOS 6.0+, Android 2.3+ (In Android 2.3 dataviz widgets support only Canvas rendering mode), BlackBerry OS 10+, Windows Phone 8+, and Chrome
+									for Android.</li>
+								<li>This strategy is typically used to build web applications that run in a browser on a phone, tablet, or desktop (i.e. Responsive Design/Mobile First Design).</li>
+							</ul>
+							<h2>Strategy 2: Use Kendo UI Mobile, Web and DataViz Widgets Running On Browsers</h2>
+							<p>Mobile widgets are not for mobile and tablet devices alone;&nbsp;<a href="http://docs.telerik.com/kendo-ui/getting-started/mobile/regular-usage">they can be used alongside the web and data visualization class of widgets</a>&nbsp;on a handful of
+								browsers. Given that the mobile widgets work on several desktop browsers and many of the Web and Data Visualization widgets work on common tablet and phone browsers, a developer could construct a mobile web application using web, data visualization,
+								and mobile widgets together, intending them to run on a web browser on mobile devices first and secondarily on desktop browsers.</p>
+							<p>To get started with Kendo UI Mobile Widgets check out the&nbsp;<a href="http://demos.telerik.com/kendo-ui/">demos</a>&nbsp;or read the&nbsp;<a href="http://docs.telerik.com/kendo-ui/">Getting Started</a>&nbsp;guides.</p>
+							<h2>Strategy 3: Use Kendo UI Mobile Application Toolkit And Mobile Widgets Running on Mobile Browsers or in WebViews</h2>
+							<p><img width="295" height="300" src="assets/dist/images/screenshot-2014-08-21-16-22-23-295x300-1.png" alt="Screenshot-2014-08-21-16.22.23-295x300[1]" displaymode="Original" title="Screenshot-2014-08-21-16.22.23-295x300[1]" style="float: left; margin: 10px; border-width: 0px; border-style: solid;"></span>Kendo
+								UI offers a toolkit for building web-based mobile applications which make use of mobile widgets inside of a framework designed to run on mobile browsers. Think of the Kendo UI Mobile Application Toolkit as a mini-SPA (single page application)
+								framework for mobile browsers. It’s similar in design to something like&nbsp;<a href="http://jquerymobile.com/">jQuery Mobile</a>&nbsp;but much more sophisticated when it comes to building applications instead of websites.</p>
+							<p>When the Mobile widgets are used in conjunction with the Mobile Application toolkit, it’s assumed that the application is running on a phone or tablet device within a browser or a WebView.</p>
+							<p>To get started with the Kendo UI Mobile Application Toolkit read the, “<a href="http://docs.telerik.com/kendo-ui/tutorials/build-apps-with-kendo-ui-mobile">Intro to Building Apps With Kendo UI Mobile</a>” tutorial and review the API documents for&nbsp;
+								<a
+												href="http://docs.telerik.com/kendo-ui/api/mobile/application"><code>kendo.mobile.Application</code></a>.</p>
+							<h2>Strategy 4: Use AppBuilder (Mobile Build/Development Tool) To Aid In Hybrid Native Development, Bridging Native API’s, and Output Cross-Platform Apps</h2>
+							<p>Using Kendo UI Mobile widgets and the Mobile Application Toolkit, a developer can build a&nbsp;<a href="http://www.telerik.com/whitepapers/kendo-ui/mobile-developer-guidance-hybrid-vs.-native">native hybrid application</a>&nbsp;that is intended
+								to simply run in a WebView. However, the developer is burdened with taking the Kendo UI mobile application and creating a native application with a WebView for each platform they would like the application to run on. Additionally, what if the
+								application required access to a native API, like the camera? How will the developer bridge the gap between the web application in the WebView and the native environment? What’s needed is a tool that will take in HTML, CSS, and JavaScript and
+								output the desired (i.e. iOS, Android, Windows Phone 8) native applications and also provide access to a devices native API’s (e.g. the devices camera).</p>
+							<p>This is exactly where&nbsp;<a href="http://docs.telerik.com/platform/appbuilder/introduction/appbuilder-mobile-app-development">AppBuilder steps in solves a number of complexities associated with hybrid development</a>. In fact, solving the distribution
+								and native API jungle is just the tip of the iceberg for AppBuilder. Appbuilder reduces the complexities associated with hybrid development and deployment.</p>
+							<p>
+								<a href="http://developer.telerik.com/wp-content/uploads/2014/08/video7.gif">
+									<br> </a>
+							</p>
+							<p>The best place to get started with AppBuilder is to&nbsp;<a href="https://www.telerik.com/login/v2/platform?ReturnUrl=https%3a%2f%2fidentity.telerik.com%2fv2%2foauth%2ftelerik%2fauthorize%3fclient_id%3duri%253aappshell%26redirect_uri%3dhttps%253a%252f%252fplatform.telerik.com%252f%26response_type%3dcode%26state%3dCC2B5DEBDBA87624481483AB6871ECAC9C5355C7EEBC73E08B5185F7ACEA5A8C">sign up for a free trial</a>&nbsp;and
+								play around with the “Friends App” example application already set up and ready to roll. Of course,&nbsp;<a href="http://docs.telerik.com/platform/appbuilder/introduction/index">reading the docs</a>&nbsp;is a great place to start too.</p>
+							<h4><span style="font-weight: normal; line-height: 1.2; font-size: 18px;">Strategy 5: Use Native Widgets to Augment Native Mobile Development done in Objective-C, Java, or C# with Native Android, iOS, Windows Widgets</span></h4>
+							<p>A&nbsp;<a href="http://blogs.telerik.com/telerikmarketing/posts/14-05-21/everything-you-wanted-to-know-about-native-hybrid-and-web-apps-but-were-afraid-to-ask">hybrid native mobile application is not always the ideal solution for a project</a>.
+								In those situations Telerik offers Native Android, iOS, Windows Widgets to be used by Objective-C, Java, or C# developers when doing native application development.</p>
+							<p>To get started with any of the native mobile widgets checkout one of their product pages:</p>
+							<ul>
+								<li><a href="http://www.telerik.com/ios-ui">iOS</a></li>
+								<li><a href="http://www.telerik.com/android-ui">Android</a></li>
+								<li><a href="http://www.telerik.com/products/windows-8/overview.aspx">Windows 8 Mobile</a></li>
+							</ul>
+							<h2>Future Strategy: Use JavaScript via NativeScript To Build Truly Native iOS and Android applications</h2>
+							<p>In the future, Telerik will be offering&nbsp;<a href="http://www.telerik.com/nativescript">NativeScript</a>&nbsp;which intends to move closer to the ideal of building mobile applications in one language (i.e. JavaScript) that can directly use the
+								native APIs on multiple platforms without relying on Cordova.</p>
+							<p>NativeScript is currently available as a private preview. You can&nbsp;<a href="http://www.telerik.com/nativescript-insiders-signup">sign up for the NativeScript Insiders program here</a>.</p>
+							<h2>Conclusion</h2>
+							<p>This article was not intended to give you in-depth working knowledge of each strategy, but more of a high level overview of Telerik solutions to help you formulate the best solution for your mobile project. It’s my hope, minimally, that I’ve set
+								up a mental context for logically understanding the stops along Telerik’s mobile development road.</p>
+							<p>&nbsp;</p>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2">
+						<hr/>
+						<div class="media Author Author--big">
+							<a class="pull-left" href="Author.html">
+								<img class="media-object img-circle" src="assets/dist/images/authors/joe.jpg" alt="joe-small" height="128px" width="128px">
+							</a>
+							<div class="media-body">
+								<h3 class="media-heading"><a href="Author.html">Rey Bango</a></h3>
+								<p class="text-muted">Front-end developer</p>
+								<p>Rey is a front-end developer working as a developer advocate for Telerik focused on the Kendo UI tools. He lives in Boise, ID with his wife and three children. You can read more about Cody on his site or follow him on Twitter at <a href="#">@reyrango</a></p>
+								<h5>More from Rey</h5>
+								<ul class="list-unstyled">
+									<li><a href="Article.html">The Very Public Cost Of Website Failures</a></li>
+									<li><a href="Article.html">Look At The Numbers</a></li>
+									<li><a href="Article.html">Test Individual Performance</a></li>
+									<li><a href="Article.html">Test Load Performance</a></li>
+									<li><a href="Article.html">Make Optimal Use Of Your Content</a></li>
+								</ul>
+								<a href="Topic.html"><span class="glyphicon glyphicon-chevron-right glyph-bordered"></span>All articles</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+		</section>
+		<section class="section">
+			<div class="container">
+
+				<h4 class="text-center">Follow us</h4>
+
+				<ul class="Social list-unstyled">
+					<li>
+						<a href="" class="icon-facebook"></a>
+					</li>
+					<li>
+						<a href="" class="icon-twitter"></a>
+					</li>
+					<li>
+						<a href="" class="icon-google"></a>
+					</li>
+					<li>
+						<a href="" class="icon-linkedin"></a>
+					</li>
+				</ul>
+
+			</div>
+		</section>
+	</div>
+	<footer></footer>
+
+	<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="assets/dist/js/all.min.js"></script>
+
+</body>
+
+</html>
